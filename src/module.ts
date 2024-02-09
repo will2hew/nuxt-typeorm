@@ -1,4 +1,5 @@
 import { addPlugin, createResolver, defineNuxtModule } from "@nuxt/kit";
+import "reflect-metadata";
 import type { DataSourceOptions } from "typeorm";
 
 export interface ModuleOptions {

@@ -8,6 +8,8 @@
 <script setup lang="ts">
 const ping = async () => {
   console.log("calling");
-  const { data } = await $fetch("/api/hello");
+  const res = await $fetch("/api/hello");
+
+  console.log(res);
 };
 </script>
