@@ -2,12 +2,12 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("user")
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ type: "int" })
   id: number;
 
-  @Column()
+  @Column({ type: "varchar" })
   firstName: string;
 
-  @Column()
+  @Column({ type: "varchar" })
   lastName: string;
 }

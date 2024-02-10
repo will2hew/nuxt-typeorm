@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.10.1",
+    "glob": "^10.3.10",
     "nitropack": "^2.8.1",
+    "pathe": "^1.1.2",
     "reflect-metadata": "^0.2.1",
     "sqlite3": "^5.1.7",
     "typeorm": "^0.3.20"

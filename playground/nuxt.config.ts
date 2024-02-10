@@ -1,17 +1,15 @@
 import "reflect-metadata";
-import { User } from "./db/entities/user.entity";
+import { User } from "./server/entities/user.entity";
 
 export default defineNuxtConfig({
   ssr: false,
   modules: ["../src/module"],
   typeorm: {
-    connection: {
-      type: "sqlite",
-      database: "db.sqlite",
-      synchronize: true,
-      logging: true,
-      entities: ["db/entities/*.entity.ts", User],
-    },
+    type: "sqlite",
+    database: "db.sqlite",
+    synchronize: true,
+    logging: true,
+    entities: [() => User],
   },
   devtools: { enabled: true },
   typescript: {

@@ -1,5 +1,6 @@
 import { useRepository } from "#typeorm";
-import { User } from "~/db/entities/user.entity";
+import { randomInt } from "crypto";
+import { User } from "~/server/entities/user.entity";
 
 export default defineEventHandler(async (event) => {
   const repository = await useRepository(event);
@@ -7,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const userRepository = repository.getRepository(User);
 
   const user = userRepository.create({
-    id: 1,
+    id: randomInt(1, 1000),
     firstName: "John",
     lastName: "Doe",
   });

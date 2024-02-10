@@ -1,10 +1,8 @@
-import { addPlugin, createResolver, defineNuxtModule } from "@nuxt/kit";
+import { createResolver, defineNuxtModule } from "@nuxt/kit";
 import "reflect-metadata";
 import type { DataSourceOptions } from "typeorm";
 
-export interface ModuleOptions {
-  connection: DataSourceOptions;
-}
+export type ModuleOptions = DataSourceOptions;
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -13,13 +11,11 @@ export default defineNuxtModule<ModuleOptions>({
   },
 
   defaults: {
-    connection: {
-      type: "sqlite",
-      database: ":memory:",
-      synchronize: true,
-      logging: true,
-      entities: [],
-    },
+    type: "sqlite",
+    database: ":memory:",
+    synchronize: true,
+    logging: true,
+    entities: [],
   },
 
   setup(options, nuxt) {
@@ -27,12 +23,14 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.typeorm = options;
 
-    addPlugin(resolve("./runtime/typeorm.server"));
+    // addPlugin(resolve("./runtime/typeorm.server"));
 
     nuxt.hook("nitro:config", async (nitroConfig) => {
       nitroConfig.alias = nitroConfig.alias || {};
 
-      nitroConfig.alias["#typeorm"] = resolve("./runtime/services/repository");
+      nitroConfig.alias["#typeorm"] = resolve("./runtime/repository");
     });
+
+    // addServerPlugin();
   },
 });

@@ -3,6 +3,7 @@
     <div>Nuxt module playground!</div>
     <button @click="ping">Ping</button>
   </div>
+  <NuxtPage />
 </template>
 
 <script setup lang="ts">
