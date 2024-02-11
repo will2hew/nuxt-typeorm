@@ -1,5 +1,10 @@
 import { useDatasource } from "./connection";
 
-export default defineNitroPlugin(async (nitro) => {
+type NitroAppPlugin = (nitro: NitroApp) => void;
+
+function defineNitroPlugin(def: NitroAppPlugin): NitroAppPlugin {
+  return def;
+}
+export default defineNitroPlugin(async () => {
   await useDatasource();
 });
