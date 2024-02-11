@@ -1,5 +1,4 @@
-//@ts-ignore
-import { entities } from "#imports";
+import { entities, useRuntimeConfig } from "#imports";
 import { DataSource } from "typeorm";
 
 let AppDataSource: DataSource;
