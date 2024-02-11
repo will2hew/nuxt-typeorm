@@ -8,16 +8,6 @@ export default defineNuxtConfig({
     logging: false,
   },
   devtools: { enabled: true },
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        experimentalDecorators: true,
-        emitDecoratorMetadata: true,
-        strictPropertyInitialization: false,
-      },
-      include: ["../db/**/*.entity.ts"],
-    },
-  },
   nitro: {
     esbuild: {
       options: {
@@ -36,7 +26,6 @@ export default defineNuxtConfig({
           experimentalDecorators: true,
           strictPropertyInitialization: false,
         },
-        include: ["../db/**/*.entity.ts"],
       },
     },
   },
