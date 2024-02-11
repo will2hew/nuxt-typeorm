@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-  ssr: false,
   modules: ["../src/module"],
   typeorm: {
     type: "sqlite",
