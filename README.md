@@ -1,5 +1,7 @@
 # Nuxt TypeORM
 
+### ⚠️ Under Active Development ⚠️
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
@@ -8,8 +10,6 @@
 A Nuxt module to make it easy to use TypeORM in your project
 
 ## Usage
-
-🚧 `nuxt-typeorm` is still in active development 🚧
 
 ### Installation
 
