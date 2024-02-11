@@ -8,6 +8,7 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "sqlite3": "^5.1.7"
   }
 }
