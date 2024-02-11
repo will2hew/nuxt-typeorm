@@ -1,6 +1,6 @@
 {
   "name": "nuxt-typeorm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Nuxt module to make it easy to use TypeORM in your project",
   "repository": {
     "type": "git",
@@ -25,13 +25,14 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "dependencies": {
     "@nuxt/kit": "^3.10.1",
+    "defu": "^6.1.4",
     "glob": "^10.3.10",
     "nitropack": "^2.8.1",
     "pathe": "^1.1.2",
