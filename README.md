@@ -9,12 +9,14 @@ A Nuxt module to make it easy to use TypeORM in your project
 
 ## Usage
 
+> 🚧 `nuxt-typeorm` is still in active development 🚧
+
 ### Installation
 
 1. Add `nuxt-typeorm` dependency to your project
 
 ```bash
-npm install --save-dev nuxt-typeorm
+npm install nuxt-typeorm
 ```
 
 2. Add `nuxt-typeorm` to the `modules` section of `nuxt.config.ts`
