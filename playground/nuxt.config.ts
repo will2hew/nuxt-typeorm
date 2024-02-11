@@ -1,6 +1,3 @@
-import "reflect-metadata";
-import { User } from "./server/entities/user.entity";
-
 export default defineNuxtConfig({
   ssr: false,
   modules: ["../src/module"],
@@ -8,8 +5,7 @@ export default defineNuxtConfig({
     type: "sqlite",
     database: "db.sqlite",
     synchronize: true,
-    logging: true,
-    entityFunction: () => [User],
+    logging: false,
   },
   devtools: { enabled: true },
   typescript: {

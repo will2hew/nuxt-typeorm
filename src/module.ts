@@ -1,14 +1,14 @@
 import {
   addServerImportsDir,
+  addServerPlugin,
   createResolver,
   defineNuxtModule,
 } from "@nuxt/kit";
+import defu from "defu";
 import "reflect-metadata";
 import type { DataSourceOptions } from "typeorm";
 
-export type ModuleOptions = DataSourceOptions & {
-  entityFunction: Function;
-};
+export type ModuleOptions = DataSourceOptions;
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -22,19 +22,21 @@ export default defineNuxtModule<ModuleOptions>({
     synchronize: true,
     logging: true,
     entities: [],
-    entityFunction: () => [],
   },
 
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
 
-    nuxt.options.runtimeConfig.public.typeorm = options;
+    const config = nuxt.options.runtimeConfig || {};
 
-    nuxt.hook("nitro:config", async (nitroConfig) => {
-      nitroConfig.alias = nitroConfig.alias || {};
-      nitroConfig.alias["#typeorm"] = resolve("./runtime/repository");
+    config.typeorm = defu(config.typeorm || {}, options);
+
+    nuxt.hook("nitro:config", async (_config) => {
+      _config.alias = _config.alias || {};
+      _config.alias["#typeorm"] = resolve("./runtime/utilities");
     });
 
     addServerImportsDir(nuxt.options.serverDir + "/entities");
+    addServerPlugin(resolve("./runtime/plugin"));
   },
 });
