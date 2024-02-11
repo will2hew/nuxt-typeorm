@@ -6,7 +6,9 @@ import {
 import "reflect-metadata";
 import type { DataSourceOptions } from "typeorm";
 
-export type ModuleOptions = DataSourceOptions;
+export type ModuleOptions = DataSourceOptions & {
+  entityFunction: Function;
+};
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -20,6 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
     synchronize: true,
     logging: true,
     entities: [],
+    entityFunction: () => [],
   },
 
   async setup(options, nuxt) {

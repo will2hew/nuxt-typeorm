@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     database: "db.sqlite",
     synchronize: true,
     logging: true,
-    entities: [() => User],
+    entityFunction: () => [User],
   },
   devtools: { enabled: true },
   typescript: {
