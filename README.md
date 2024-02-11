@@ -9,7 +9,7 @@ A Nuxt module to make it easy to use TypeORM in your project
 
 ## Usage
 
-> 🚧 `nuxt-typeorm` is still in active development 🚧
+🚧 `nuxt-typeorm` is still in active development 🚧
 
 ### Installation
 
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 });
 ```
 
-3. Add your TypeORM configuration to `nuxt.config.ts`
+3. Add your TypeORM and TypeScript configuration to `nuxt.config.ts`
 
 ```js
 typeorm: {
@@ -36,9 +36,30 @@ typeorm: {
     synchronize: true,
     logging: false,
   },
+  nitro: {
+    esbuild: {
+      options: {
+        tsconfigRaw: {
+          compilerOptions: {
+            emitDecoratorMetadata: true,
+            experimentalDecorators: true,
+          },
+        },
+      },
+    },
+    typescript: {
+      tsConfig: {
+        compilerOptions: {
+          emitDecoratorMetadata: true,
+          experimentalDecorators: true,
+          strictPropertyInitialization: false,
+        },
+      },
+    },
+  }
 ```
 
-4. Create and export an entity
+4. Create an entity
 
 ```js
 // server/entities/user.entity.ts
@@ -55,7 +76,11 @@ export class User {
   @Column({ type: "varchar" })
   lastName: string;
 }
+```
 
+5. Export the entities
+
+```js
 // server/entities/entities.ts
 import { User } from "./user.entity";
 
