@@ -1,8 +1,11 @@
 {
-  "name": "my-module",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "will2hew/my-module",
+  "name": "nuxt-typeorm",
+  "version": "0.0.1",
+  "description": "A Nuxt module to make it easy to use TypeORM in your project",
+  "repository": {
+    "type": "git",
+    "url": "github:will2hew/nuxt-typeorm"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
