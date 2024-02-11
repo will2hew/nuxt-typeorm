@@ -1,4 +1,9 @@
-import { Repository, type EntityTarget, type ObjectLiteral } from "typeorm";
+import {
+  DataSource,
+  Repository,
+  type EntityTarget,
+  type ObjectLiteral,
+} from "typeorm";
 import { useDatasource } from "./connection";
 
 export async function getRepository<T extends ObjectLiteral>(
@@ -6,4 +11,8 @@ export async function getRepository<T extends ObjectLiteral>(
 ): Promise<Repository<T>> {
   const datasource = await useDatasource();
   return datasource.getRepository(entity);
+}
+
+export async function getDatasource(): Promise<DataSource> {
+  return useDatasource();
 }

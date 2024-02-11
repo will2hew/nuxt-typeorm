@@ -8,7 +8,7 @@ import defu from "defu";
 import "reflect-metadata";
 import type { DataSourceOptions } from "typeorm";
 
-export type ModuleOptions = DataSourceOptions;
+export type ModuleOptions = Omit<DataSourceOptions, "entities">;
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -21,7 +21,6 @@ export default defineNuxtModule<ModuleOptions>({
     database: ":memory:",
     synchronize: true,
     logging: true,
-    entities: [],
   },
 
   async setup(options, nuxt) {
