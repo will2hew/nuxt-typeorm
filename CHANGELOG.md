@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.5...v0.0.6)
+
+### 📖 Documentation
+
+- Update readme ([bccc5ba](https://github.com/will2hew/nuxt-typeorm/commit/bccc5ba))
+- Tweak ([4bdb41a](https://github.com/will2hew/nuxt-typeorm/commit/4bdb41a))
+- Tweak ([b867be9](https://github.com/will2hew/nuxt-typeorm/commit/b867be9))
+
+### 🏡 Chore
+
+- **release:** V0.0.5 ([d31e267](https://github.com/will2hew/nuxt-typeorm/commit/d31e267))
+
+### ❤️ Contributors
+
+- Will Hewitt <will@heartlab.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.4...v0.0.5)
