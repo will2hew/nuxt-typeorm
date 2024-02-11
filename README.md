@@ -7,30 +7,13 @@
 
 A Nuxt module to make it easy to use TypeORM in your project
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-typeorm?file=playground%2Fapp.vue) -->
-  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
+## Usage
 
-## Features
-
-<!-- Highlight some of the features your module provide here -->
-
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
-
-## Quick Setup
+### Installation
 
 1. Add `nuxt-typeorm` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D nuxt-typeorm
-
-# Using yarn
-yarn add --dev nuxt-typeorm
-
-# Using npm
 npm install --save-dev nuxt-typeorm
 ```
 
@@ -42,32 +25,57 @@ export default defineNuxtConfig({
 });
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+3. Add your TypeORM configuration to `nuxt.config.ts`
 
-## Development
+```js
+typeorm: {
+    type: "sqlite",
+    database: "db.sqlite",
+    synchronize: true,
+    logging: false,
+  },
+```
 
-```bash
-# Install dependencies
-npm install
+4. Create and export an entity
 
-# Generate type stubs
-npm run dev:prepare
+```js
+// server/entities/user.entity.ts
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-# Develop with the playground
-npm run dev
+@Entity("user")
+export class User {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-# Build the playground
-npm run dev:build
+  @Column({ type: "varchar" })
+  firstName: string;
 
-# Run ESLint
-npm run lint
+  @Column({ type: "varchar" })
+  lastName: string;
+}
 
-# Run Vitest
-npm run test
-npm run test:watch
+// server/entities/entities.ts
+import { User } from "./user.entity";
 
-# Release new version
-npm run release
+export const entities = [User];
+```
+
+5. You're done! `nuxt-typeorm` provides a `getRepository` helper function
+
+```js
+// server/api/users.get.ts
+
+import { getRepository } from "#typeorm";
+
+export default defineEventHandler(async (event) => {
+  const userRepository = await getRepository(User);
+
+  const users = await userRepository.find();
+
+  return {
+    users,
+  };
+});
 ```
 
 <!-- Badges -->
