@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Explicitly import useRuntimeConfig ([53576e9](https://github.com/will2hew/nuxt-typeorm/commit/53576e9))
+
+### 🏡 Chore
+
+- **release:** V0.0.4 ([82cd002](https://github.com/will2hew/nuxt-typeorm/commit/82cd002))
+
+### ❤️ Contributors
+
+- Will Hewitt <will@heartlab.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.3...v0.0.4)
