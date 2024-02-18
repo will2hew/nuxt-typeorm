@@ -28,6 +28,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     const config = nuxt.options.runtimeConfig || {};
 
+    // TODO: Fix the types issue here
+    // @ts-ignore
     config.typeorm = defu(config.typeorm || {}, options);
 
     nuxt.hook("nitro:config", async (_config) => {
