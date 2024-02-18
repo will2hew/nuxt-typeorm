@@ -8,7 +8,7 @@ export async function useDatasource(): Promise<DataSource> {
 
   if (!AppDataSource) {
     AppDataSource = new DataSource({ ...config, entities });
-    AppDataSource.initialize();
+    await AppDataSource.initialize();
   }
 
   if (!AppDataSource.isInitialized) {

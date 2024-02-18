@@ -8,7 +8,7 @@ import defu from "defu";
 import "reflect-metadata";
 import type { DataSourceOptions } from "typeorm";
 
-export type ModuleOptions = Omit<DataSourceOptions, "entities">;
+export type ModuleOptions = DataSourceOptions;
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {

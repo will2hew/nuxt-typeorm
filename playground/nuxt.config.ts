@@ -1,8 +1,10 @@
 export default defineNuxtConfig({
   modules: ["../src/module"],
   typeorm: {
-    type: "sqlite",
-    database: "db.sqlite",
+    type: "postgres",
+    database: "store",
+    username: "store-user",
+    password: "password",
     synchronize: true,
     logging: false,
   },
