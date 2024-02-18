@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Correct config types and correctly initialize db on first load ([5a28547](https://github.com/will2hew/nuxt-typeorm/commit/5a28547))
+
+### 🏡 Chore
+
+- **release:** V0.0.6 ([bfeef9b](https://github.com/will2hew/nuxt-typeorm/commit/bfeef9b))
+
+### ❤️ Contributors
+
+- Will Hewitt <will@heartlab.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.5...v0.0.6)
