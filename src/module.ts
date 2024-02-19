@@ -38,6 +38,7 @@ export default defineNuxtModule<ModuleOptions>({
     });
 
     addServerImportsDir(nuxt.options.serverDir + "/entities");
+    addServerImportsDir(nuxt.options.serverDir + "/migrations");
     addServerPlugin(resolve("./runtime/plugin"));
   },
 });
