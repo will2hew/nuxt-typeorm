@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.7...v0.0.8)
+
+### 📖 Documentation
+
+- Add todo ([4765a55](https://github.com/will2hew/nuxt-typeorm/commit/4765a55))
+
+### 🏡 Chore
+
+- **release:** V0.0.7 ([43e616f](https://github.com/will2hew/nuxt-typeorm/commit/43e616f))
+
+### ❤️ Contributors
+
+- Will Hewitt <will@heartlab.com>
+
 ## v0.0.7
 
 [compare changes](https://github.com/will2hew/nuxt-typeorm/compare/v0.0.6...v0.0.7)
