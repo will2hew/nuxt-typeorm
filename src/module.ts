@@ -19,7 +19,6 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     type: "sqlite",
     database: ":memory:",
-    synchronize: true,
     logging: true,
   },
 
