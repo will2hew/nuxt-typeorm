@@ -87,7 +87,14 @@ import { User } from "./user.entity";
 export const entities = [User];
 ```
 
-5. You're done! `nuxt-typeorm` provides a `getRepository` helper function
+6. Create Migrations File
+
+```js
+// server/migrations/migrations.ts
+export const migrations = [];
+```
+
+7. You're done! `nuxt-typeorm` provides a `getRepository` helper function
 
 ```js
 // server/api/users.get.ts
